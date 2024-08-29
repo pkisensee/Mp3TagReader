@@ -70,6 +70,18 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>..\Util;..\File;..\Mp3TagData;..\String;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\Util;..\File;..\Mp3TagData;..\String;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>..\Util;..\File;..\Mp3TagData;..\String;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>..\Util;..\File;..\Mp3TagData;..\String;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>EnableAllWarnings</WarningLevel>
@@ -148,6 +160,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Mp3TagReader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\File\File.vcxproj">
+      <Project>{a2a617b6-2015-48e9-bf8b-76e18fdc0043}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Mp3TagData\Mp3TagData.vcxproj">
+      <Project>{7365ca4e-a689-46ba-ac08-84143a01e1eb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\String\String.vcxproj">
+      <Project>{cd2abb7c-efea-4f49-90f3-3b2337e81b11}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.vcxproj">
+      <Project>{39a9cb6f-6f44-4205-a01b-555db992a76e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\WinShim\WinShim.vcxproj">
+      <Project>{5fb36991-edc5-47cf-84b2-268312497167}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
